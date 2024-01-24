@@ -51,13 +51,11 @@ namespace NotesHub.Entities
                 eb.Property(note=>note.Id).IsRequired();
                 eb.Property(note=>note.Name).IsRequired();
                 eb.Property(note => note.Name).HasDefaultValue("Nowa notatka - tytuł");
-                //eb.Property(note=>note.Author).IsRequired();
                 eb.Property(note=>note.Content).HasColumnType("text");
                 eb.Property(note=>note.Content).HasDefaultValue("Tutaj napisz zawartość notatki");
                 eb.Property(note => note.CreationTime).HasPrecision(3);
                 eb.Property(note=>note.Content).HasMaxLength(3000);
-                //eb.HasOne(u => u.User).WithOne(n=>n.Note).HasForeignKey<Note>(n=>n.UserId); //1 do 1, potencjalnie do poprawy
-                eb.HasMany(c => c.Comments).WithOne(n => n.Note).HasForeignKey(c=>c.NoteId);//notatka ma wiele komentarzy, komentarz przypisany do jednej notatki, 1 do wielu
+                eb.HasMany(c => c.Comments).WithOne(n => n.Note).HasForeignKey(c=>c.NoteId);
                 eb.HasMany(n => n.Tags).WithMany(t => t.Notes);
                 eb.HasOne(n=>n.State).WithMany().HasForeignKey(n=>n.StateId);
             });
