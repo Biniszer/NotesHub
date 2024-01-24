@@ -9,12 +9,14 @@ namespace NotesHub.Entities
     public class Note
     {
         public Guid Id { get; set; }
-        public string State { get; set; }
+        public NoteState State { get; set; }
+        public Guid StateId { get; set; }
         public string Name { get; set; }
-        public string Author { get; set; }
-        public string Tags{ get; set; }
         public DateTime CreationTime { get; set; }
-        public string Comments {  get; set; }
-        public string Content { get; set; }
+        public string? Content { get; set; }
+        public User Author { get; set; }
+        public Guid AuthorId { get; set; }
+        public List<Comment> Comments {get; set; } = new List<Comment>();
+        public List<Tag> Tags { get; set; }
     }
 }

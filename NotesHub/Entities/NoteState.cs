@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NotesHub;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace NotesHub.Entities
 {
-    public class Tag
+    public class NoteState
     {
         public Guid Id { get; set; }
-        public string Value { get; set; }
-        public List<Note> Notes { get; set; }
+        public NoteState Value { get; }
     }
 }

@@ -13,5 +13,7 @@ namespace NotesHub.Entities
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public string Author { get; set; }
+        public Note Note { get; set; }
+        public Guid NoteId { get; set; }
     }
 }

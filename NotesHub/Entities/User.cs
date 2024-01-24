@@ -14,5 +14,6 @@ namespace NotesHub.Entities
         public string Password { get; set; }
         public string Nick {  get; set; }
         public string Email { get; set; }
+        public List<Note> Notes{ get; set; } = new List<Note>();
     }
 }
