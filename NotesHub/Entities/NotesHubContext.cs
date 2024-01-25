@@ -59,7 +59,7 @@ namespace NotesHub.Entities
                 eb.HasMany(n => n.Tags).WithMany(t => t.Notes);
                 eb.HasOne(n=>n.State).WithMany().HasForeignKey(n=>n.StateId);
             });
-            modelBuilder.Entity<NoteState>().Property(ns=>ns.Value).IsRequired();
+            //modelBuilder.Entity<NoteState>().Property(ns=>ns.State).IsRequired();
         }
     }
 }

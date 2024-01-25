@@ -1,4 +1,4 @@
-﻿using NotesHub;
+﻿using NotesHub.enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,6 @@ namespace NotesHub.Entities
     public class NoteState
     {
         public Guid Id { get; set; }
-        public NoteState Value { get; }
+        public enum State { get; set; }
     }
 }
