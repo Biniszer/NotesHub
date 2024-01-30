@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace NotesHub.Entities
 {
+    public class PublicNote : Note
+    {
+        public List<Comment> Comments { get; set; } = new List<Comment>();
+    }
     public class Note
     {
         public Guid Id { get; set; }
@@ -16,7 +20,6 @@ namespace NotesHub.Entities
         public string? Content { get; set; }
         public User Author { get; set; }
         public Guid AuthorId { get; set; }
-        public List<Comment> Comments {get; set; } = new List<Comment>();
         public List<Tag> Tags { get; set; }
     }
 }

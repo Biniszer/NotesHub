@@ -10,6 +10,6 @@ namespace NotesHub.Entities
     public class NoteState
     {
         public Guid Id { get; set; }
-        public State Value { get; set; }
+        public State StateValue { get; set; }
     }
 }
