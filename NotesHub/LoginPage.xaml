@@ -7,24 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.421,0.459">
-        <PasswordBox HorizontalAlignment="Left" Margin="561,127,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="561,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <PasswordBox x:Name="LoginPassword" HorizontalAlignment="Left" Margin="561,127,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="PasswordValidation"/>
+        <TextBox x:Name="Login" HorizontalAlignment="Left" Margin="561,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="LoginField"/>
         <Label Content="Login:" HorizontalAlignment="Left" Margin="515,101,0,0" VerticalAlignment="Top"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="495,123,0,0" VerticalAlignment="Top"/>
         <Button Content="Login" HorizontalAlignment="Left" Margin="648,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.477,-1.544"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="129,198,0,0" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox HorizontalAlignment="Left" Margin="129,221,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="129,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="129,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="129,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged_1"/>
-        <TextBox HorizontalAlignment="Left" Margin="129,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="129,198,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="RegisterPasswordValidation"/>
+        <PasswordBox x:Name="repeatPassword" HorizontalAlignment="Left" Margin="129,221,0,0" VerticalAlignment="Top" Width="120" PasswordChanged="RegisterPasswordValidation"/>
+        <TextBox x:Name="nick" HorizontalAlignment="Left" Margin="129,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RegisterData"/>
+        <TextBox x:Name="email" HorizontalAlignment="Left" Margin="129,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RegisterData"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Margin="129,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RegisterData"/>
+        <TextBox x:Name="Surname" HorizontalAlignment="Left" Margin="129,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="RegisterData"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="82,102,0,0" VerticalAlignment="Top"/>
         <Label Content="Surname" HorizontalAlignment="Left" Margin="67,125,0,0" VerticalAlignment="Top"/>
         <Label Content="Email" HorizontalAlignment="Left" Margin="86,148,0,0" VerticalAlignment="Top"/>
         <Label Content="Login" HorizontalAlignment="Left" Margin="85,171,0,0" VerticalAlignment="Top"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="64,194,0,0" VerticalAlignment="Top"/>
         <Label Content="Repeat Password" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top"/>
-        <Button Content="Register" HorizontalAlignment="Left" Margin="209,244,0,0" VerticalAlignment="Top"/>
+        <Button Content="Register" HorizontalAlignment="Left" Margin="202,244,0,0" VerticalAlignment="Top"/>
         <Label Content="NotesHub" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="82" Width="240" FontSize="48"/>
 
     </Grid>

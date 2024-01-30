@@ -21,14 +21,26 @@ namespace NotesHub
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void LoginField(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        private void RegisterData(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void RegisterPasswordValidation(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        private void PasswordValidation(object sender, TextChangedEventArgs e)
+        {
+            if ()
+            {
+                
+            }
         }
     }
 }
