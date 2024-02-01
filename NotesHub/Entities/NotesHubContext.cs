@@ -12,6 +12,10 @@ namespace NotesHub.Entities
 {
     public class NotesHubContext : DbContext
     {
+        public NotesHubContext(DbContextOptions<NotesHubContext> options) : base(options)
+        {
+
+        }
         public DbSet<Note> Notes { get; set; }
         public DbSet<PublicNote> PublicNotes { get; set; }
         public DbSet<User> Users { get; set; }
@@ -68,7 +72,11 @@ namespace NotesHub.Entities
                 eb.Property(note => note.CreationTime).HasPrecision(3);
                 eb.Property(note=>note.Content).HasMaxLength(3000);               
                 eb.HasMany(n => n.Tags).WithMany(t => t.Notes);
-                eb.HasOne(n=>n.State).WithMany().HasForeignKey(n=>n.StateId);
+                eb.HasOne(n => n.State).WithMany().HasForeignKey(n => n.StateId);
+                eb.HasMany(w => w.Tags)
+                .WithMany(t => t.Notes)
+                .UsingEntity<Tag>();
+                    
             });
             //modelBuilder.Entity<NoteState>().Property(ns=>ns.State).IsRequired();
         }

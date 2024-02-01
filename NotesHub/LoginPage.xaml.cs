@@ -45,10 +45,7 @@ namespace NotesHub
         }
         private void PasswordValidation(object sender, TextChangedEventArgs e)
         {
-            if ()
-            {
-                
-            }
+            
         }
 
         private void RegisterButton(object sender, RoutedEventArgs e)
@@ -58,10 +55,7 @@ namespace NotesHub
 
         private void LoginButton(object sender, RoutedEventArgs e)
         {
-            if()
-            {
-
-            }
+            
         }
     }
 }
