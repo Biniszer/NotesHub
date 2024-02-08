@@ -14,23 +14,37 @@ namespace NotesHub
     /// </summary>
     public partial class App : Application
     {
+        private const string ConnectionstringKey = "postgres";
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
 
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddConfiguration((IConfiguration)NotesHubContext.ReadConfiguration())
+            var configuration = new ConfigurationBuilder()
+                //.SetBasePath(Directory.GetCurrentDirectory())
+                //.AddJsonFile("appSettings.json", optional: true, reloadOnChange: true)
                 .Build();
 
-            var serviceProvider = new ServiceCollection()
-                .AddDbContext<NotesHubContext>(options =>
-                    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")))
-                .BuildServiceProvider();
+            //var serviceProvider = new ServiceCollection()
+            //    .AddDbContext<NotesHubContext>(options =>
+            //        options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")))
+            //    .BuildServiceProvider();
+            
+        
+            //var mainWindow = serviceProvider.GetRequiredService<LoginWindow>();
+            //mainWindow.Show();
+        }
 
-            var mainWindow = serviceProvider.GetRequiredService<MainWindow>();
-            mainWindow.Show();
+        private void ConfigureServices(IServiceCollection services)
+        {
+            var configuration = NotesHubContext.ReadConfiguration();
+            var connectionString = configuration.ConnectionString[ConnectionstringKey];
+            // Konfiguracja kontekstu bazy danych
+            services.AddDbContext<NotesHubContext>(options =>
+                options.UseSqlServer(connectionString));
         }
     }
+
+
 
 
 
